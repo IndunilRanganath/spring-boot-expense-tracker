@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import in.bushansirgur.expense_tracker.model.Expense;
@@ -15,7 +16,7 @@ public class MasterController {
 	
 	@Autowired
 	ExpenseService expenseService;
-	
+	@ResponseBody
 	@RequestMapping("/")
 	public ModelAndView home() {
 		ModelAndView mav = new ModelAndView("home");

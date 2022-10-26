@@ -16,13 +16,23 @@ public class MasterController {
 	
 	@Autowired
 	ExpenseService expenseService;
+	
+	
 	@ResponseBody
 	@RequestMapping("/")
 	public ModelAndView home() {
 		ModelAndView mav = new ModelAndView("home");
 		mav.addObject("message" , "List of Expenses");
 		List<Expense> expense = expenseService.findAll();
-		System.out.println(expense);
+		mav.addObject("expense",expense);
+		return mav;
+	}
+	
+	
+	@RequestMapping("/expense")
+	public ModelAndView addexpense() {
+		ModelAndView mav = new ModelAndView("expense");
+		mav.addObject("expense" , new Expense());
 		return mav;
 	}
 }

@@ -17,15 +17,16 @@
 
 	<h1>Add expense</h1>
 	
-	<form:form action="${contextRoot}/save" method="post" modelAttribute="expense">
+	<form:form action="${contextRoot}/expense" method="post" modelAttribute="expense">
 		<form:input path="expensename" placeholder="Enter expense name" />
+		<form:input path="amount" placeholder="Enter expense amount" />
 		<form:textarea path="note" placeholder="Enter note(optional)" />
 		
 		<button type="submit">Add Expense</button>
 	
 	</form:form>
 	
-	
+	 
 
 </body>
 </html>

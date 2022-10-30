@@ -14,7 +14,7 @@ public class ExpenseServiceimpl implements ExpenseService {
 	@Autowired
 	ExpenseRepository expenseRepository;
 	
-	@Override
+	@Override 
 	public List<Expense> findAll() {
 		// TODO Auto-generated method stub
 		return expenseRepository.findAll();
@@ -22,6 +22,7 @@ public class ExpenseServiceimpl implements ExpenseService {
 
 	@Override
 	public void save(Expense expense) {
+		expense.setCreatedAt(System.currentTimeMillis());
 		expenseRepository.save(expense);
 		
 	}
